@@ -1,0 +1,8 @@
+default: 
+  - 'watch:css'
+
+build:
+  - 'sass'
+  - 'cssmin'
+  - 'uglify'
+

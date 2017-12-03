@@ -1,0 +1,22 @@
+$font-fam-default: 'Montserrat', sans-serif;
+$font-fam-script: 'Rochester', cursive;
+$font-fam-serif: 'Playfair Display', serif;
+    
+h1 {
+	font-family: $font-fam-script;
+	font-size: 5.625rem;
+}
+h2 {
+	font-family: $font-fam-script;
+	font-size: 3.75rem;
+}
+h3 {
+	font-family: $font-fam-default;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+p {
+    font-family: $font-fam-default;
+    font-size: 1rem;
+}

@@ -1,0 +1,72 @@
+$border-sz: 4px;
+
+body {
+	margin: 0;
+	font-family: $font-fam-default;
+}
+
+header, section, footer {
+	width: 100%;
+}
+
+header {
+	color: $c-text-white;
+}
+.container {}
+.nav {
+	ul {
+		list-style: none;
+		text-transform: uppercase;
+		li {
+			display: inline;
+			text-align:right;
+		}
+	}
+}
+.title {
+	.names {}
+	.married {}
+}
+
+section {}
+
+.headshots {
+	.heart {}
+}
+
+#story {
+	background: $bg-purple;
+}
+
+#schedule {
+	margin: 0 auto;
+	h3, .whenWhere, .daysLeft {
+		text-align: center;
+	}
+	.agenda {
+		padding: 55px 0;
+	}
+	.whenWhere {
+		border-bottom: $border-sz $border-color solid;
+	}
+	.daysLeft {
+		padding-top: 55px;
+		border-top: $border-sz $border-color solid;
+	}
+}
+
+#travel {
+	background: $bg-purple;
+}
+
+#rsvp {}
+
+#location {}
+
+footer {
+	background: $bg-dark-grey;
+
+	.names {}
+	.heart {}
+	.copyright {}
+}
