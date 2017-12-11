@@ -3,6 +3,7 @@ default:
 
 build:
   - 'sass'
+  - 'autoprefixer'
   - 'cssmin'
-  - 'uglify'
+ # - 'uglify'
 

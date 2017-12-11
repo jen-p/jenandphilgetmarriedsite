@@ -3,70 +3,237 @@ $border-sz: 4px;
 body {
 	margin: 0;
 	font-family: $font-fam-default;
+	color: $c-text;
 }
 
 header, section, footer {
 	width: 100%;
+	position: relative;
 }
 
 header {
+	position: relative;
 	color: $c-text-white;
+	background: url('../images/katy-belcher-348038.jpg') no-repeat;
+	background-size: cover;
+	height: 572px;
+	z-index: 0;
+	clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0% 85%, 0 0);
+	.bg-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(137,90,157,.4);
+		z-index: 1;
+	}
+
 }
-.container {}
+.container { 
+	max-width: 1256px; 
+	margin: 0 auto;
+}
 .nav {
+	position: relative;
+	display: block;
+	z-index: 2;
 	ul {
+		position: relative;
+		display: block;
 		list-style: none;
 		text-transform: uppercase;
+		text-align: right;
+		margin-top: 0;
+		padding-top: 20px;
 		li {
 			display: inline;
-			text-align:right;
+			text-align: right;
+			margin: 0 20px;
+			a {
+				color: $c-text-white;
+				text-decoration: none;
+				&:hover {
+					color: $c-text-white;
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 }
 .title {
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	margin-top: 17vh;
 	.names {}
 	.married {}
 }
 
-section {}
-
-.headshots {
-	.heart {}
+section {
+	padding: 50px 0;
 }
 
-#story {
+.headshots {
+	margin: 0 auto;
+	.headshot, .heart {
+		display: inline-block;
+	}
+	.container{
+		display: flex;
+		justify-content: space-around;
+	}
+	.heart {
+		background: url('../images/headshot-heart.svg') no-repeat;
+		width: 389px;
+	}
+	.headshot {
+		width: 230px;
+		text-align: center;
+		
+		.img {
+			height: 230px;
+			width: 230px;
+			border-radius: 50%;
+			&.jen { background: url('../images/jen.png') no-repeat; }
+			&.phil { background: url('../images/phil.png') no-repeat; }
+		}
+		h3 { 
+			align-text: center;
+			padding-top: 20px; 
+		}
+		.name {
+			align-text: center;
+			font-family: $font-fam-serif;
+			font-size: 2rem;
+		}
+	}
+}
+
+#our-story {
 	background: $bg-purple;
+	.story {
+		width: 723px;
+		margin: 0 auto;
+	}
+	h3 {
+		text-align: center; 
+		padding-bottom: 20px;
+	}
+	p { margin: 0 125px; }
+	.cats {
+		display: flex;
+		justify-content: space-around;
+		width: 723px;
+		margin: 50px auto;
+		.cat {
+			display: inline-block;
+			width: 50%;
+			.cat-img {
+				margin: 0 auto;
+				height: 200px;
+				width: 200px;
+				border-radius: 50%;
+				&:nth-child(2) {
+					margin-right: 125px;
+				}
+				&.salem { 
+					background: url('../images/salem.png') no-repeat;
+					background-size: contain;
+				}
+				&.bastila { 
+					background: url('../images/salem2.png') no-repeat;
+					background-size: contain;
+				}
+			}
+		}
+	}
 }
 
 #schedule {
 	margin: 0 auto;
+	padding-top: 0;
+	.willowdale { 
+		background: url('../images/slider2.jpg') no-repeat;
+		background-size: cover;
+		height: 337px;
+		margin-bottom: 50px;
+	}
 	h3, .whenWhere, .daysLeft {
 		text-align: center;
 	}
-	.agenda {
-		padding: 55px 0;
+	.border {
+		border-bottom: $border-sz $border-purple solid;
+		height:1px;
+		width: 109px;
+		margin: 0 auto;
 	}
-	.whenWhere {
-		border-bottom: $border-sz $border-color solid;
+	.scheduleContent {
+		width: 340px;
+		margin: 0 auto;
+	}
+	.agenda {
+		margin: 0 auto;
+		margin-left: 52px;
+		.timeblock {
+			margin: 50px 0;
+			.when, .what {
+				display: inline-block;
+				vertical-align: top;
+				line-height: 1rem;
+			}
+			.when {
+				text-align: right;
+				margin-right: 15px;
+			}
+			.what {
+				text-align: left;
+			}
+		}
 	}
 	.daysLeft {
-		padding-top: 55px;
-		border-top: $border-sz $border-color solid;
+		.days {font-size: 3.75rem;}
+		.border {
+			margin: 30px auto;
+			width: 167px;
+		}
 	}
 }
 
 #travel {
 	background: $bg-purple;
+	.travelContent {
+		width:456px;
+		margin: 0 auto;
+	}
 }
 
-#rsvp {}
+#rsvp {
+	background: url('../images/annie-spratt-277548.png') no-repeat;
+	background-size: cover;
+	.form {
+		background: rgba(255,255,255,.8);
+	}
+}
 
 #location {}
 
 footer {
 	background: $bg-dark-grey;
+	padding: 50px 0;
+	text-align: center;
 
-	.names {}
-	.heart {}
-	.copyright {}
+	.names {
+		text-transform: uppercase;
+	}
+	.heart {
+		fill: #895A9D;
+		display: inline-block;
+		height:23px;
+		width:22px;
+	}
+	.copyright {
+		padding-top: 30px;
+		font-size: .875rem;
+	}
 }

@@ -1,9 +1,9 @@
 module.exports = {
 	build: {
 		expand: true,
-		cwd: './assets/css',
+		cwd: './css',
 		src: ['**/*.css', '!**/*.min.css'],
-		dest: '_build/css',
+		dest: './css',
 		ext: '.min.css'
 	}
 }

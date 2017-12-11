@@ -1,7 +1,11 @@
 $font-fam-default: 'Montserrat', sans-serif;
 $font-fam-script: 'Rochester', cursive;
 $font-fam-serif: 'Playfair Display', serif;
-    
+
+h1, h2, h3 {
+	padding: 0;
+	margin: 0;
+}
 h1 {
 	font-family: $font-fam-script;
 	font-size: 5.625rem;
@@ -19,4 +23,5 @@ h3 {
 p {
     font-family: $font-fam-default;
     font-size: 1rem;
+    line-height: 1.5rem;
 }
