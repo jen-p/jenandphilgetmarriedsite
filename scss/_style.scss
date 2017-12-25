@@ -30,8 +30,8 @@ header {
 	}
 
 }
-.container { 
-	max-width: 1256px; 
+.container {
+	max-width: 1256px;
 	margin: 0 auto;
 }
 .nav {
@@ -90,7 +90,7 @@ section {
 	.headshot {
 		width: 230px;
 		text-align: center;
-		
+
 		.img {
 			height: 230px;
 			width: 230px;
@@ -98,9 +98,9 @@ section {
 			&.jen { background: url('../images/jen.png') no-repeat; }
 			&.phil { background: url('../images/phil.png') no-repeat; }
 		}
-		h3 { 
+		h3 {
 			align-text: center;
-			padding-top: 20px; 
+			padding-top: 20px;
 		}
 		.name {
 			align-text: center;
@@ -117,7 +117,7 @@ section {
 		margin: 0 auto;
 	}
 	h3 {
-		text-align: center; 
+		text-align: center;
 		padding-bottom: 20px;
 	}
 	p { margin: 0 125px; }
@@ -137,11 +137,11 @@ section {
 				&:nth-child(2) {
 					margin-right: 125px;
 				}
-				&.salem { 
+				&.salem {
 					background: url('../images/salem.png') no-repeat;
 					background-size: contain;
 				}
-				&.bastila { 
+				&.bastila {
 					background: url('../images/salem2.png') no-repeat;
 					background-size: contain;
 				}
@@ -153,7 +153,7 @@ section {
 #schedule {
 	margin: 0 auto;
 	padding-top: 0;
-	.willowdale { 
+	.willowdale {
 		background: url('../images/slider2.jpg') no-repeat;
 		background-size: cover;
 		height: 337px;
