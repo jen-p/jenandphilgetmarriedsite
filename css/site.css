@@ -16,10 +16,48 @@ h3 {
   text-transform: uppercase;
   font-weight: 700; }
 
+a, a:visited {
+  color: #6B6B6B; }
+  a:hover, a:visited:hover {
+    color: #000; }
+
 p {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
-  line-height: 1.5rem; }
+  line-height: 1.7rem; }
+
+dl {
+  margin-top: -7px; }
+  dl dt {
+    line-height: 2rem;
+    font-weight: 700;
+    margin-top: 15px; }
+  dl dd {
+    margin-left: 0;
+    line-height: 1.7rem; }
+    dl dd a {
+      color: #6B6B6B; }
+
+button {
+  border: 2px #895A9D solid;
+  border-radius: 6px;
+  padding: 23px;
+  background: transparent;
+  font-family: "Montserrat", sans-serif;
+  color: #895A9D;
+  font-size: 1rem; }
+  button:hover, button.active {
+    background: #895A9D;
+    color: #fff; }
+
+input {
+  border: 2px #895A9D solid;
+  border-radius: 6px;
+  padding: 23px;
+  background: rgba(137, 90, 157, 0.12);
+  font-family: "Montserrat", sans-serif;
+  color: #6B6B6B;
+  font-size: 1rem; }
 
 body {
   margin: 0;
@@ -93,10 +131,17 @@ section {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
-        justify-content: space-around; }
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
   .headshots .heart {
     background: url("../images/headshot-heart.svg") no-repeat;
-    width: 389px; }
+    width: 389px;
+    height: 63px;
+    background-size: contain;
+    margin-left: -300px;
+    margin-right: -300px; }
   .headshots .headshot {
     width: 230px;
     text-align: center; }
@@ -125,7 +170,7 @@ section {
     text-align: center;
     padding-bottom: 20px; }
   #our-story p {
-    margin: 0 125px; }
+    margin: 0 115px; }
   #our-story .cats {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -148,7 +193,7 @@ section {
           background: url("../images/salem.png") no-repeat;
           background-size: contain; }
         #our-story .cats .cat .cat-img.bastila {
-          background: url("../images/salem2.png") no-repeat;
+          background: url("../images/bastila.jpg") no-repeat;
           background-size: contain; }
 
 #schedule {
@@ -194,12 +239,75 @@ section {
   #travel .travelContent {
     width: 456px;
     margin: 0 auto; }
+    #travel .travelContent h3 {
+      text-align: center; }
+  #travel .travelSection {
+    margin: 20px 0; }
+  #travel .text {
+    display: inline-block; }
+  #travel .icon-container {
+    display: inline-block;
+    vertical-align: top;
+    width: 82px;
+    margin-top: 10px; }
+  #travel .icon {
+    margin: 0 auto; }
+    #travel .icon.airport {
+      background: url("../images/iconAirplane.svg") no-repeat;
+      width: 35px;
+      height: 35px;
+      background-size: contain; }
+    #travel .icon.hotel {
+      background: url("../images/iconHotel.svg") no-repeat;
+      width: 53px;
+      height: 35px;
+      background-size: contain; }
+    #travel .icon.location {
+      background: url("../images/iconLocation.svg") no-repeat;
+      width: 35px;
+      height: 35px;
+      background-size: contain; }
 
 #rsvp {
-  background: url("../images/annie-spratt-277548.png") no-repeat;
-  background-size: cover; }
-  #rsvp .form {
-    background: rgba(255, 255, 255, 0.8); }
+  background: url("../images/annie-spratt-277548.jpg") no-repeat;
+  background-size: cover;
+  height: 500px;
+  position: relative;
+  z-index: 0; }
+  #rsvp .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 1; }
+  #rsvp .rsvp-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    height: 200px;
+    margin: 50px 100px;
+    padding: 64px;
+    z-index: 2; }
+    #rsvp .rsvp-container h3 {
+      text-align: center; }
+  #rsvp .rsvp-form .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 40px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    margin: 0 -20px;
+    border: solid red 1px; }
+  #rsvp .rsvp-form button {
+    margin: 0 10px; }
+  #rsvp .rsvp-form .input-group {
+    margin: 0 10px; }
+    #rsvp .rsvp-form .input-group .label {
+      margin-bottom: 10px; }
 
 footer {
   background: #222;

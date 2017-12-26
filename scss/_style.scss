@@ -1,5 +1,3 @@
-$border-sz: 4px;
-
 body {
 	margin: 0;
 	font-family: $font-fam-default;
@@ -28,12 +26,13 @@ header {
 		background: rgba(137,90,157,.4);
 		z-index: 1;
 	}
-
 }
+
 .container {
 	max-width: 1256px;
 	margin: 0 auto;
 }
+
 .nav {
 	position: relative;
 	display: block;
@@ -61,6 +60,7 @@ header {
 		}
 	}
 }
+
 .title {
 	position: relative;
 	z-index: 2;
@@ -82,10 +82,15 @@ section {
 	.container{
 		display: flex;
 		justify-content: space-around;
+		align-items: center;
 	}
 	.heart {
 		background: url('../images/headshot-heart.svg') no-repeat;
 		width: 389px;
+		height: 63px;
+		background-size: contain;
+		margin-left:-300px;
+		margin-right:-300px;
 	}
 	.headshot {
 		width: 230px;
@@ -120,7 +125,7 @@ section {
 		text-align: center;
 		padding-bottom: 20px;
 	}
-	p { margin: 0 125px; }
+	p { margin: 0 115px; }
 	.cats {
 		display: flex;
 		justify-content: space-around;
@@ -142,7 +147,7 @@ section {
 					background-size: contain;
 				}
 				&.bastila {
-					background: url('../images/salem2.png') no-repeat;
+					background: url('../images/bastila.jpg') no-repeat;
 					background-size: contain;
 				}
 			}
@@ -202,17 +207,96 @@ section {
 
 #travel {
 	background: $bg-purple;
+
 	.travelContent {
 		width:456px;
 		margin: 0 auto;
+		h3 {
+			text-align: center;
+		}
+	}
+	.travelSection {
+		margin: 20px 0;
+	}
+	.text {
+		display: inline-block;
+	}
+	.icon-container {
+		display: inline-block;
+		vertical-align: top;
+		width: 82px;
+		margin-top: 10px;
+	}
+	.icon {
+		margin: 0 auto;
+
+		&.airport {
+			background: url('../images/iconAirplane.svg') no-repeat;
+			width: 35px;
+			height: 35px;
+			background-size: contain;
+
+		}
+		&.hotel {
+			background: url('../images/iconHotel.svg') no-repeat;
+			width: 53px;
+			height: 35px;
+			background-size: contain;
+		}
+
+		&.location {
+			background: url('../images/iconLocation.svg') no-repeat;
+			width: 35px;
+			height: 35px;
+			background-size: contain;
+		}
 	}
 }
 
 #rsvp {
-	background: url('../images/annie-spratt-277548.png') no-repeat;
+	background: url('../images/annie-spratt-277548.jpg') no-repeat;
 	background-size: cover;
-	.form {
+	height: 500px;
+	position: relative;
+	z-index: 0;
+	.bg-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(255,255,255,.5);
+		z-index: 1;
+	}
+	.rsvp-container {
+		position: relative;
 		background: rgba(255,255,255,.8);
+		height: 200px;
+		margin: 50px 100px;
+		padding: 64px;
+		z-index: 2;
+		h3 {
+			text-align: center;
+		}
+	}
+	.rsvp-form {
+		.row {
+			display: flex;
+			margin-top: 40px;
+			justify-content: center;
+			width: 100%;
+			margin: 0 -20px;
+			border: solid red 1px;
+		}
+		button {
+			margin: 0 10px;
+		}
+		.input-group {
+			margin: 0 10px;
+			.label {
+				margin-bottom: 10px;
+			}
+		}
 	}
 }
 

@@ -38,13 +38,13 @@
 	</header>
 
 	<section class="headshots">
-	<div class="heart"></div>
 		<div class="container">
 			<div class="headshot">
 				<div class="img jen"></div>
 				<h3>The Bride</h3>
 				<div class="name">Jennifer Patel</div>
 			</div>
+      <div class="heart"></div>
 			<div class="headshot">
 				<div class="img phil"></div>
 				<h3>The Groom</h3>
@@ -124,41 +124,94 @@
 
 	</section>
 
-	<!--
+<!--
 	<section id="rsvp">
-		<div class="form">
-			<!--rsvp form goes here --
+    <div class="bg-overlay"></div>
+		<div class="rsvp-container">
+      <h3>RSVP</h3>
+			<!--test form --
+      <div class="rsvp-form">
+        <div class="row">
+          <button>I'll be there!</button>
+          <button>Can't make it</button>
+        </div>
+        <div class="row">
+          <div class="input-group input-name">
+            <div class="label">Your Name</div>
+            <input type="text" value="Name">
+          </div>
+          <div class="input-group input-meal">
+            <div class="label">Meal Preference</div>
+            <input type="text" value="Name">
+          </div>
+          <div class="input-group">
+            <div class="label">Number Attending</div>
+            <input type="text" value="Name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-group email">
+            <div class="label">Your Email</div>
+            <input type="text" value="Email">
+          </div>
+        </div>
+        <button>RSVP</button>
+      </div>
 		</div>
 	</section>
 
 	<section id="location">
 		<!-- map goes here --
-	</section>-->
+	</section>
+-->
 
 	<section id="travel">
 		<div class="travelContent">
 			<h3>Travel</h3>
-			<div class="fly">
-				<div class="icon"></div>
+			<div class="travelSection fly">
+				<div class="icon-container"><div class="icon airport"></div></div>
 				<div class="text">
-					<p>Nearest airport</p>
 					<p>Boston Logan International Airport</p>
 				</div>
 			</div>
-			<div class="hotel">
-				<div class="icon"></div>
+			<div class="travelSection hotel">
+				<div class="icon-container"><div class="icon hotel"></div></div>
 				<div class="text">
-					<p>Hotels near wedding venue</p>
-					<ul>
-						<li><a>Salem</a></li>
-						<li><a>Danverse</a></li>
-					</ul>
+					<dl>
+            <dt>Danvers</dt>
+              <dd><a href="http://doubletree3.hilton.com/en/hotels/massachusetts/doubletree-by-hilton-hotel-boston-north-shore-BOSNSDT/index.html" target="blank">DoubleTree by Hilton Boston North Shore</a></dd>
+              <dd><a href="http://www.marriott.com/hotels/travel/bosdn-residence-inn-boston-north-shore-danvers/" target="blank">Residence Inn Boston North Shore/Danvers</a></dd>
+            <dt>Salem</dt>
+              <dd><a href="http://www.salemwaterfronthotel.com/" target="blank">Salem Waterfront Hotel</a></dd>
+              <dd><a href="https://www.hawthornehotel.com/" target="blank">Hawthorne Hotel</a></dd>
+              <dd><a href="http://www.saleminnma.com/" target="blank">The Salem Inn</a></dd>
+            <dt>Cambridge</dt>
+              <dd><a href="http://www.charleshotel.com/" target="blank">The Charles Hotel</a></dd>
+          </dl>
 				</div>
 			</div>
-			<div class="activities">
-				<div class="icon"></div>
+			<div class="travelSection activities">
+        <div class="icon-container"><div class="icon location"></div></div>
 				<div class="text">
-					<p>Make a weekend of it! Things to do, see, eat</p>
+					<p>Things to do</p>
+          <dl>
+            <dt>Salem</dt>
+              <dd><a href="https://www.salemwitchmuseum.com/" target="blank">Salem Witch Museum</a></dd>
+              <dd><a href="https://7gables.org/" target="blank">House of the Seven Gables</a></dd>
+            <dt>Cambridge</dt>
+              <dd><a href="http://www.harvardsquare.com/" target="blank">Harvard Square</a></dd>
+              <dd><a href="https://hmnh.harvard.edu/" target="blank">Harvard Museum of Natural History</a></dd>
+              <dd><a href="https://www.harvardartmuseums.org/" target="blank">Harvard Art Museums</a></dd>
+              <dd><a href="https://mitmuseum.mit.edu/" target="blank">MIT Museum</a></dd>
+            <dt>Boston</dt>
+              <dd><a href="https://bostonpublicmarket.org/" target="blank">Boston Public Market</a></dd>
+              <dd><a href="https://www.boston.gov/parks/public-garden" target="blank">Boston Public Garden</a></dd>
+              <dd><a href="https://www.faneuilhallmarketplace.com/" target="blank">Faneuil Hall</a></dd>
+              <dd><a href="http://www.neaq.org/" target="blank">Boston Aquarium</a></dd>
+              <dd><a href="http://www.mfa.org/" target="blank">Museum of Fine Arts</a></dd>
+              <dd><a href="https://www.samueladams.com/brewery-and-craft/brewery-tours" target="blank">Sam Adams Brewery & Tour</a></dd>
+              <dd><a href="https://www.harpoonbrewery.com/breweries/boston" target="blank">Harpoon Brewery & Tour</a></dd>
+          </dl>
 				</div>
 			</div>
 		</div>
