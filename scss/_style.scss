@@ -226,6 +226,7 @@ section {
 	.willowdale {
 		background: url('../images/slider2.jpg') no-repeat;
 		background-size: cover;
+		background-position: center center;
 		height: 337px;
 		margin-bottom: 50px;
 	}
@@ -381,10 +382,12 @@ footer {
 		text-transform: uppercase;
 	}
 	.heart {
-		fill: #895A9D;
+		background: url('../images/heart.svg') no-repeat;
 		display: inline-block;
 		height:23px;
 		width:22px;
+		background-size: contain;
+		vertical-align: bottom;
 	}
 	.copyright {
 		padding-top: 30px;

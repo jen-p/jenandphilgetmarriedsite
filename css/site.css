@@ -257,6 +257,7 @@ section {
   #schedule .willowdale {
     background: url("../images/slider2.jpg") no-repeat;
     background-size: cover;
+    background-position: center center;
     height: 337px;
     margin-bottom: 50px; }
   #schedule h3, #schedule .whenWhere, #schedule .daysLeft {
@@ -374,10 +375,12 @@ footer {
   footer .names {
     text-transform: uppercase; }
   footer .heart {
-    fill: #895A9D;
+    background: url("../images/heart.svg") no-repeat;
     display: inline-block;
     height: 23px;
-    width: 22px; }
+    width: 22px;
+    background-size: contain;
+    vertical-align: bottom; }
   footer .copyright {
     padding-top: 30px;
     font-size: .875rem; }
