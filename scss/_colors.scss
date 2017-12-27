@@ -2,9 +2,11 @@ $c-text: #6B6B6B;
 $c-text-grey: #B1B1B1;
 $c-text-white: #fff;
 $purple: #895A9D;
+$transparent-purple: rgba(137,90,157,.3);
+$transparent-purple-dkr: rgba(137,90,157,.5);
 $bg-purple: #EDE5F0;
 $border-purple: #B99EC5;
-$input-purple: rgba(137,90,157,.12);
+$input-purple: $transparent-purple;
 $bg-dark-grey: #222;
 
 $border-radius: 6px;

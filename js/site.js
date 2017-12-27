@@ -11,4 +11,15 @@ function setDaysLeft(endtime){
     togo.innerHTML = "You've missed the party!!!";
   }
 }
+
+function handleMenu() {
+  var menuToggle = document.getElementById("open-menu");
+  var menu = document.getElementById("menu")
+
+  menuToggle.onclick = function() {
+      menu.classList.toggle("active");
+  };
+}
+
 setDaysLeft("2019-04-19");
+handleMenu();

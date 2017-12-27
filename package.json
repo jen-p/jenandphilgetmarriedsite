@@ -4,7 +4,8 @@
   "description": "portfolio backend",
   "repository": "portfolio",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "package": "^1.0.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

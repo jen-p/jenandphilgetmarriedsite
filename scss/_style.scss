@@ -32,29 +32,71 @@ header {
 	max-width: 1256px;
 	margin: 0 auto;
 }
-
-.nav {
-	position: relative;
+#nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	background: $transparent-purple;
 	display: block;
-	z-index: 2;
+	z-index: 5;
+	#open-menu {
+		text-align: right;
+		font-size: 36px;
+		padding-right: 15px;
+		color: $c-text-white;
+		&:hover {
+			cursor: pointer;
+			background: $transparent-purple-dkr;
+		}
+		&:before { content:'\2630'; }
+	}
 	ul {
-		position: relative;
-		display: block;
+		position: absolute;
+		right: 0;
+		display: none;
 		list-style: none;
 		text-transform: uppercase;
 		text-align: right;
-		margin-top: 0;
-		padding-top: 20px;
+		margin: 0;
+		padding: 0;
+		width: 150px;
+		background: $transparent-purple;
+		&.active {
+			display: block;
+		}
 		li {
-			display: inline;
+			display: block;
 			text-align: right;
-			margin: 0 20px;
+			width: 100%;
 			a {
 				color: $c-text-white;
 				text-decoration: none;
+				padding: 10px 15px;
+				display: block;
 				&:hover {
 					color: $c-text-white;
-					text-decoration: underline;
+					background: $transparent-purple-dkr;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	#nav {
+		#open-menu { display: none; }
+		ul {
+			display: block;
+			width: 100%;
+			li {
+				display: inline-block;
+				width: auto;
+				a {
+					color: $c-text-white;
+					text-decoration: none;
+					&:hover {
+						color: $c-text-white;
+					}
 				}
 			}
 		}
@@ -65,9 +107,7 @@ header {
 	position: relative;
 	z-index: 2;
 	text-align: center;
-	margin-top: 17vh;
-	.names {}
-	.married {}
+	padding-top: 17vh;
 }
 
 section {
@@ -76,25 +116,25 @@ section {
 
 .headshots {
 	margin: 0 auto;
-	.headshot, .heart {
-		display: inline-block;
-	}
 	.container{
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
+		display: block;
 	}
 	.heart {
+		display: none;
 		background: url('../images/headshot-heart.svg') no-repeat;
 		width: 389px;
 		height: 63px;
 		background-size: contain;
 		margin-left:-300px;
 		margin-right:-300px;
+		z-index: 0;
 	}
 	.headshot {
 		width: 230px;
 		text-align: center;
+		z-index: 1;
+		margin: 30px auto;
+		display: block;
 
 		.img {
 			height: 230px;
@@ -113,35 +153,44 @@ section {
 			font-size: 2rem;
 		}
 	}
+	@media (min-width: 610px) {
+		.heart {
+			display: inline-block;
+		}
+		.headshot {
+			margin: 0;
+			display: inline-block;
+		}
+		.container{
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+	}
 }
 
 #our-story {
 	background: $bg-purple;
 	.story {
-		width: 723px;
+		max-width: 723px;
 		margin: 0 auto;
 	}
 	h3 {
 		text-align: center;
 		padding-bottom: 20px;
 	}
-	p { margin: 0 115px; }
+	p { margin: 0 25px; }
 	.cats {
-		display: flex;
-		justify-content: space-around;
-		width: 723px;
+		display: block;
+		max-width: 723px;
 		margin: 50px auto;
 		.cat {
-			display: inline-block;
-			width: 50%;
+			display: block;
 			.cat-img {
-				margin: 0 auto;
+				margin: 20px auto;
 				height: 200px;
 				width: 200px;
 				border-radius: 50%;
-				&:nth-child(2) {
-					margin-right: 125px;
-				}
 				&.salem {
 					background: url('../images/salem.png') no-repeat;
 					background-size: contain;
@@ -149,6 +198,22 @@ section {
 				&.bastila {
 					background: url('../images/bastila.jpg') no-repeat;
 					background-size: contain;
+				}
+			}
+		}
+	}
+	@media (min-width: 550px) {
+		p { margin: 0 115px; }
+	}
+	@media (min-width: 450px) {
+		.cats {
+			display: flex;
+			justify-content: space-around;
+			.cat {
+				display: inline-block;
+				width: 50%;
+				.cat-img:nth-child(2) {
+					margin-right: 125px;
 				}
 			}
 		}
@@ -209,17 +274,20 @@ section {
 	background: $bg-purple;
 
 	.travelContent {
-		width:456px;
+		max-width: 600px;
 		margin: 0 auto;
 		h3 {
 			text-align: center;
 		}
 	}
 	.travelSection {
-		margin: 20px 0;
+		margin: 20px auto;
+		max-width: 436px;
 	}
 	.text {
 		display: inline-block;
+		word-wrap: break-word;
+		max-width: 70%;
 	}
 	.icon-container {
 		display: inline-block;
@@ -250,6 +318,8 @@ section {
 			height: 35px;
 			background-size: contain;
 		}
+	}
+	@media (min-width: 450px) {
 	}
 }
 
