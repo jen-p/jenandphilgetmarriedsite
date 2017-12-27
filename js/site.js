@@ -16,6 +16,11 @@ function handleMenu() {
   var menuToggle = document.getElementById("open-menu");
   var menu = document.getElementById("menu")
 
+  window.onclick = function(event) {
+    if(!event.target.matches("#open-menu")) {
+        menu.classList.remove("active");
+    }
+  }
   menuToggle.onclick = function() {
       menu.classList.toggle("active");
   };
