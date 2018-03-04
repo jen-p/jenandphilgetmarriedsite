@@ -24,6 +24,7 @@ a, a:visited {
 	color: $c-text;
 	&:hover {
 		color: #000;
+		cursor: pointer;
 	}
 }
 p {
@@ -48,7 +49,8 @@ dl {
 	}
 }
 
-button {
+button,
+.button {
 	border: 2px $purple solid;
 	border-radius: $border-radius;
 	padding: 23px;
@@ -56,12 +58,18 @@ button {
 	font-family: $font-fam-default;
 	color: $purple;
 	font-size: 1rem;
-	&:hover, &.active {
+
+	&:hover,
+	&:active,
+	&.active {
+		cursor: pointer;
 		background: $purple;
 		color: $c-text-white;
 	}
 }
-
+fieldset {
+	border: none;
+}
 input {
 	border: 2px $purple solid;
 	border-radius: $border-radius;

@@ -19,7 +19,8 @@ h3 {
 a, a:visited {
   color: #6B6B6B; }
   a:hover, a:visited:hover {
-    color: #000; }
+    color: #000;
+    cursor: pointer; }
 
 p {
   font-family: "Montserrat", sans-serif;
@@ -38,7 +39,8 @@ dl {
     dl dd a {
       color: #6B6B6B; }
 
-button {
+button,
+.button {
   border: 2px #895A9D solid;
   border-radius: 6px;
   padding: 23px;
@@ -46,9 +48,16 @@ button {
   font-family: "Montserrat", sans-serif;
   color: #895A9D;
   font-size: 1rem; }
-  button:hover, button.active {
+  button:hover, button:active, button.active,
+  .button:hover,
+  .button:active,
+  .button.active {
+    cursor: pointer;
     background: #895A9D;
     color: #fff; }
+
+fieldset {
+  border: none; }
 
 input {
   border: 2px #895A9D solid;
@@ -199,14 +208,12 @@ section {
       margin: 0;
       display: inline-block; }
     .headshots .container {
-      display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; } }
+      -ms-flex-align: center;
+          align-items: center; } }
 
 #our-story {
   background: #EDE5F0; }
@@ -240,7 +247,6 @@ section {
       margin: 0 115px; } }
   @media (min-width: 450px) {
     #our-story .cats {
-      display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: distribute;
@@ -330,7 +336,6 @@ section {
 #rsvp {
   background: url("../images/annie-spratt-277548.jpg") no-repeat;
   background-size: cover;
-  height: 500px;
   position: relative;
   z-index: 0; }
   #rsvp .bg-overlay {
@@ -344,29 +349,39 @@ section {
   #rsvp .rsvp-container {
     position: relative;
     background: rgba(255, 255, 255, 0.8);
-    height: 200px;
     margin: 50px 100px;
     padding: 64px;
     z-index: 2; }
     #rsvp .rsvp-container h3 {
       text-align: center; }
   #rsvp .rsvp-form .row {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 40px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 100%;
-    margin: 0 -20px;
-    border: solid red 1px; }
+    -ms-flex-pack: center;
+        justify-content: center;
+    width: 100%; }
+    @supports ((-ms-flex-pack: space-evenly) or (justify-content: space-evenly)) {
+      #rsvp .rsvp-form .row {
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly; } }
   #rsvp .rsvp-form button {
     margin: 0 10px; }
   #rsvp .rsvp-form .input-group {
     margin: 0 10px; }
-    #rsvp .rsvp-form .input-group .label {
-      margin-bottom: 10px; }
+  #rsvp .radio-button {
+    display: inline-block; }
+  #rsvp label {
+    display: block;
+    margin-bottom: 10px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+  #rsvp input[type='radio'] {
+    display: none; }
+    #rsvp input[type='radio']:checked + label {
+      background: #895A9D;
+      color: #fff; }
 
 footer {
   background: #222;

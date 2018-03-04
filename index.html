@@ -11,6 +11,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="http://www.jenandphilgetmarried.com"/>
 
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Playfair+Display|Rochester" rel="stylesheet">
@@ -126,44 +127,54 @@
 
 	</section>
 
-<!--
+
 	<section id="rsvp">
-    <div class="bg-overlay"></div>
+		<div class="bg-overlay"></div>
 		<div class="rsvp-container">
-      <h3>RSVP</h3>
-			<!--test form --
-      <div class="rsvp-form">
-        <div class="row">
-          <button>I'll be there!</button>
-          <button>Can't make it</button>
-        </div>
-        <div class="row">
-          <div class="input-group input-name">
-            <div class="label">Your Name</div>
-            <input type="text" value="Name">
-          </div>
-          <div class="input-group input-meal">
-            <div class="label">Meal Preference</div>
-            <input type="text" value="Name">
-          </div>
-          <div class="input-group">
-            <div class="label">Number Attending</div>
-            <input type="text" value="Name">
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-group email">
-            <div class="label">Your Email</div>
-            <input type="text" value="Email">
-          </div>
-        </div>
-        <button>RSVP</button>
-      </div>
+			<h3>RSVP</h3>
+
+			<form class="rsvp-form" action="contact.php" method="post">
+				<div class="row">
+					<fieldset class="radio-button">
+						<input id="attendance-positive" name="attendance" type="radio" value="Yes" required>
+						<label for="attendance-positive" class="button">I'll be there!</label>
+					</fieldset>
+					<fieldset class="radio-button">
+						<input id="attendance-negative" name="attendance" type="radio" value="No" required>
+						<label for="attendance-negative" class="button">Can't make it.</label>
+					</fieldset>
+				</div>
+				<div class="row">
+					<fieldset class="input-group">
+						<label for="name">Name</label>
+						<input id="name" name="name" type="text" placeholder="Name" required>
+					</fieldset>
+					<fieldset class="input-group">	
+						<label for="numberAttending">Number Attending</label>
+						<input id="numberAttending" name="numberAttending" type="number" required value="1" min="1" max="10" step="1">
+					</fieldset>
+				</div>
+				<div class="row">
+					<fieldset class="input-group email">
+						<label for="email">Email (in case we need to get in touch)</label>
+						<input id="email" name="email" type="email" placeholder="Email" required>
+					</fieldset>
+				</div>
+					<!--<fieldset class="input-group input-meal">
+						<label for="meal">Meal Preference</label>
+						<input id="meal" name="meal" type="text" placeholder="Meal" required>
+					</fieldset>
+					https://www.dropbox.com/sh/g0celdfxbso3zq6/AAAo0_I91o6LeeIWyRYpArbNa?dl=0&preview=website_form.png
+				-->
+									
+				<button type="submit" name="rsvp">RSVP</button>
+			</form>
 		</div>
 	</section>
 
+<!--
 	<section id="location">
-		<!-- map goes here --
+		map goes here
 	</section>
 -->
 
@@ -211,8 +222,8 @@
               <dd><a href="https://www.faneuilhallmarketplace.com/" target="blank">Faneuil Hall</a></dd>
               <dd><a href="http://www.neaq.org/" target="blank">Boston Aquarium</a></dd>
               <dd><a href="http://www.mfa.org/" target="blank">Museum of Fine Arts</a></dd>
-              <dd><a href="https://www.samueladams.com/brewery-and-craft/brewery-tours" target="blank">Sam Adams Brewery & Tour</a></dd>
-              <dd><a href="https://www.harpoonbrewery.com/breweries/boston" target="blank">Harpoon Brewery & Tour</a></dd>
+              <dd><a href="https://www.samueladams.com/brewery-and-craft/brewery-tours" target="blank">Sam Adams Brewery &amp; Tour</a></dd>
+              <dd><a href="https://www.harpoonbrewery.com/breweries/boston" target="blank">Harpoon Brewery &amp; Tour</a></dd>
           </dl>
 				</div>
 			</div>
