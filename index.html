@@ -143,20 +143,8 @@
 					</fieldset>
 				</div>
 				<div class="rsvp-info hidden">
-					<div class="row default">
-						<fieldset class="input-group">
-							<label for="name">Name</label>
-							<input id="name" name="name" type="text" title="Please fill out your full name" placeholder="Name" class="attendanceDependant" disabled required>
-						</fieldset>
-						<fieldset class="input-group">
-							<label for="meal">Meal Preference</label>
-							<select id="meal" name="meal" class="attendanceDependant" title="Please choose a meal preference" disabled required>
-								<option value="meat">Meat</option>
-								<option value="vegetable">Vegetable</option>
-								<option value="kids">Kids</option>
-							</select>
-						</fieldset>
-						<fieldset class="input-group attendance">	
+					<div class="row">
+						<fieldset class="input-group numberAttending">	
 							<label for="numberAttending">Number Attending</label>
 							<select id="numberAttending" name="numberAttending" class="attendanceDependant" title="Please choose the amount of people coming" disabled required>
 								<option value="1">1</option>
@@ -172,9 +160,23 @@
 							</select>
 						</fieldset>
 					</div>
+					<div class="row default">
+						<fieldset class="input-group">
+							<label for="name">Name</label>
+							<input id="name" name="name" type="text" title="Please fill out your full name" placeholder="Name" class="attendanceDependant" disabled required>
+						</fieldset>
+						<fieldset class="input-group">
+							<label for="meal">Meal Preference</label>
+							<select id="meal" name="meal" class="attendanceDependant" title="Please choose a meal preference" disabled required>
+								<option value="meat">Meat</option>
+								<option value="vegetable">Vegetable</option>
+								<option value="kids">Kids</option>
+							</select>
+						</fieldset>
+					</div>
 				</div>
 				<div class="row">
-					<fieldset class="input-group">
+					<fieldset class="input-group notes">
 						<label for="notes">Other notes (dietary restrictions, etc)</label>
 						<textarea rows="10" cols="50" id="notes" name="notes" spellcheck="true"></textarea>
 					</fieldset>

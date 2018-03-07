@@ -51,7 +51,7 @@ function submitForm($form){
 
 function createNewAttendanceRows($form, totalRows){
   var $defaultRow = $form.find(".row.default");
-  var currentRows = $form.find(".rsvp-info .row").length;
+  var currentRows = $form.find(".rsvp-info .row.dynamic").length + 1;
 
   if(currentRows > totalRows){
     var removedCount = 0;
@@ -68,8 +68,6 @@ function createNewAttendanceRows($form, totalRows){
       $newRow.removeClass("default");
       $newRow.addClass("dynamic");
       $newRow.attr("count", i);
-      $newRow.find("fieldset.input-group.attendance label").remove();
-      $newRow.find("fieldset.input-group.attendance select").remove();
       $newRow.find("label").each(function() {
         $label = $(this);
         $label.attr("for", $label.attr("for") + "-" + i);
@@ -97,6 +95,7 @@ function handleForm(){
       $rsvpInfo.find(".attendanceDependant").each(function(){
         $(this).removeAttr("disabled");
       });
+      $form.find("select[name='numberAttending']").prop("selectedIndex", 0);
     }else{
       $rsvpInfo.addClass("hidden");
       $rsvpInfo.remove(".row.dynamic");
@@ -107,7 +106,6 @@ function handleForm(){
 
       $rsvpInfo.find(".attendanceDependant").each(function(){
         $(this).attr("disabled", "true");
-        $(this).val("");
       });
     }
   });
@@ -130,7 +128,7 @@ function handleForm(){
     if($form[0].checkValidity()){
       submitForm($form);
     }else{
-      console.log("form is invalid");
+      window.navigator.vibrate([100,50,100,50,100]);
     }
   });
 }
