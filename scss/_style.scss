@@ -350,25 +350,37 @@ section {
 			text-align: center;
 		}
 	}
-	.rsvp-form {
-		.row {
-			display: flex;
+	.row {
+		display: flex;
+		width: 100%;
+	    max-width: 715px;
+    	margin: 0 auto;
+
+		&.attendance{
 			justify-content: center;
+		}
+		fieldset {
+			max-width: 33%;
 			width: 100%;
 
-			@supports (justify-content: space-evenly) {
-				justify-content: space-evenly;
+			&.email {
+				max-width: 100%;
 			}
 		}
-		button {
-			margin: 0 10px;
-		}
-		.input-group {
-			margin: 0 10px;
-		}
+	}
+	button {
+		display: block;
+		margin: 0 auto;
+		margin-top: 1rem;
+	}
+	.input-group {
+		margin: 0 10px;
 	}
 	.radio-button {
 		display: inline-block;
+	    width: 100%;
+    	max-width: 200px;
+    	text-align: center;
 	}
 	label {
 		display: block;
@@ -376,7 +388,7 @@ section {
 		user-select: none;
 	}
 	input[type='radio'] {
-		display: none;
+		opacity: 0;
 
 		&:checked + label {
 			background: $purple;

@@ -1,7 +1,14 @@
 const express = require('express'),
-	app = express();
+	app = express(),
+	bodyParser = require("body-parser");
 
 app.use(express.static('./'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true})); 
+
+app.post("/mockSubmission", function(req, res) {
+	res.json(req.body);
+});
 
 const server = app.listen(1337, () => {
   let host = LOCAL_IP(),

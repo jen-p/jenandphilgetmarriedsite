@@ -3,15 +3,14 @@ module.exports = {
 		options: {
 		    ASCIIOnly: true,
 		    compress: {
-		        drop_console: true
+		        pure_funcs: ['console.log']
 		      }
 		},
 		files: [{
 			expand: true,
-			src: ['js/scripts.js'],
+			src: ['js/site.js'],
 			dest: '_build',
-			ext: '.min.js'
-		}]
-		
+			ext: '.js'
+		}]	
 	}
 }

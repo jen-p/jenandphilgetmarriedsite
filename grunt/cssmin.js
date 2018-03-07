@@ -3,7 +3,7 @@ module.exports = {
 		expand: true,
 		cwd: './css',
 		src: ['**/*.css', '!**/*.min.css'],
-		dest: './css',
-		ext: '.min.css'
+		dest: '_build/css',
+		ext: '.css'
 	}
 }

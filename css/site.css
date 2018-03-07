@@ -59,7 +59,9 @@ button,
 fieldset {
   border: none; }
 
-input {
+input,
+select,
+textarea {
   border: 2px #895A9D solid;
   border-radius: 6px;
   padding: 23px;
@@ -67,6 +69,16 @@ input {
   font-family: "Montserrat", sans-serif;
   color: #6B6B6B;
   font-size: 1rem; }
+
+.hidden {
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  position: absolute;
+  height: 1px;
+  width: 1px; }
+  .hidden *:before,
+  .hidden *:after {
+    display: none; }
 
 body {
   margin: 0;
@@ -354,22 +366,31 @@ section {
     z-index: 2; }
     #rsvp .rsvp-container h3 {
       text-align: center; }
-  #rsvp .rsvp-form .row {
+  #rsvp .row {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-        justify-content: center;
-    width: 100%; }
-    @supports ((-ms-flex-pack: space-evenly) or (justify-content: space-evenly)) {
-      #rsvp .rsvp-form .row {
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly; } }
-  #rsvp .rsvp-form button {
-    margin: 0 10px; }
-  #rsvp .rsvp-form .input-group {
+    width: 100%;
+    max-width: 715px;
+    margin: 0 auto; }
+    #rsvp .row.attendance {
+      -ms-flex-pack: center;
+          justify-content: center; }
+    #rsvp .row fieldset {
+      max-width: 33%;
+      width: 100%; }
+      #rsvp .row fieldset.email {
+        max-width: 100%; }
+  #rsvp button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem; }
+  #rsvp .input-group {
     margin: 0 10px; }
   #rsvp .radio-button {
-    display: inline-block; }
+    display: inline-block;
+    width: 100%;
+    max-width: 200px;
+    text-align: center; }
   #rsvp label {
     display: block;
     margin-bottom: 10px;
@@ -378,7 +399,7 @@ section {
         -ms-user-select: none;
             user-select: none; }
   #rsvp input[type='radio'] {
-    display: none; }
+    opacity: 0; }
     #rsvp input[type='radio']:checked + label {
       background: #895A9D;
       color: #fff; }

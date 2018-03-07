@@ -4,9 +4,8 @@
   <meta charset="utf-8">
   <title>Jen and Phil's Wedding</title>
   <meta name="title" property="og:title" content="Jen and Phil's Wedding">
-  <meta name="description" property="og:description" content="Jen and Phil's Wedding Site | Schedule | Travel">
-  <meta property="og:image" content="">
-  <meta name="author" content="Jennifer Patel">
+  <meta name="description" property="og:description" content="Jen and Phil's Wedding Site | RSVP | Schedule | Travel">
+  <meta name="author" content="Jennifer Patel, Phil Sobus">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
@@ -16,10 +15,9 @@
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Playfair+Display|Rochester" rel="stylesheet">
   <link rel="stylesheet" href="./css/site.css">
-
   <link rel="icon" type="image/png" href="./assets/images/favicon.png">
 
-  <script async src="./js/site.js"></script>
+  <script src="./js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
   <div id="nav">
@@ -27,10 +25,10 @@
     <ul id="menu">
       <li><a href="#our-story">Our Story</a></li>
       <li><a href="#schedule">Schedule</a></li>
-      <!--<li><a href="#rsvp">RSVP</a></li>-->
+      <li><a href="#rsvp">RSVP</a></li>
       <li><a href="#travel">Travel</a></li>
       <!--<li><a>Registry</a></li>-->
-      <li><a href="mailto:jennifer.c.patel@gmail.com">Contact</a></li>
+      <li><a href="mailto:jennifer.c.patel@gmail.com,phil.sobus@gmail.com">Contact</a></li>
     </ul>
   </div>
 
@@ -82,9 +80,9 @@
 			<h3>The Big Day</h3>
 			<div class="border"></div>
 			<p class="whenWhere">
-				Friday, April 19,2019 5:00 PM
-				<br/>Willowdale Estate
-				<br/>Topsfield, MA
+				Friday, April 19, 2019 5:00 PM
+				<br/>Willowdale Estate<br/>
+				<a target="_blank" href="https://www.google.com/maps/dir//24 Asbury St, Topsfield, MA 01983">24 Asbury St, Topsfield, MA 01983</a>
 			</p>
 
 			<div class="agenda">
@@ -133,8 +131,8 @@
 		<div class="rsvp-container">
 			<h3>RSVP</h3>
 
-			<form class="rsvp-form" action="contact.php" method="post">
-				<div class="row">
+			<form class="rsvp-form" onsubmit="return false" method="post" action="/contact.php">
+				<div class="row attendance">
 					<fieldset class="radio-button">
 						<input id="attendance-positive" name="attendance" type="radio" value="Yes" required>
 						<label for="attendance-positive" class="button">I'll be there!</label>
@@ -144,30 +142,50 @@
 						<label for="attendance-negative" class="button">Can't make it.</label>
 					</fieldset>
 				</div>
+				<div class="rsvp-info hidden">
+					<div class="row default">
+						<fieldset class="input-group">
+							<label for="name">Name</label>
+							<input id="name" name="name" type="text" title="Please fill out your full name" placeholder="Name" class="attendanceDependant" disabled required>
+						</fieldset>
+						<fieldset class="input-group">
+							<label for="meal">Meal Preference</label>
+							<select id="meal" name="meal" class="attendanceDependant" title="Please choose a meal preference" disabled required>
+								<option value="meat">Meat</option>
+								<option value="vegetable">Vegetable</option>
+								<option value="kids">Kids</option>
+							</select>
+						</fieldset>
+						<fieldset class="input-group attendance">	
+							<label for="numberAttending">Number Attending</label>
+							<select id="numberAttending" name="numberAttending" class="attendanceDependant" title="Please choose the amount of people coming" disabled required>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+						</fieldset>
+					</div>
+				</div>
 				<div class="row">
 					<fieldset class="input-group">
-						<label for="name">Name</label>
-						<input id="name" name="name" type="text" placeholder="Name" required>
-					</fieldset>
-					<fieldset class="input-group">	
-						<label for="numberAttending">Number Attending</label>
-						<input id="numberAttending" name="numberAttending" type="number" required value="1" min="1" max="10" step="1">
+						<label for="notes">Other notes (dietary restrictions, etc)</label>
+						<textarea rows="10" cols="50" id="notes" name="notes" spellcheck="true"></textarea>
 					</fieldset>
 				</div>
 				<div class="row">
 					<fieldset class="input-group email">
 						<label for="email">Email (in case we need to get in touch)</label>
-						<input id="email" name="email" type="email" placeholder="Email" required>
+						<input id="email" name="email" type="email" placeholder="emailaddress@domain.com" title="Please enter a valid email address" required>
 					</fieldset>
-				</div>
-					<!--<fieldset class="input-group input-meal">
-						<label for="meal">Meal Preference</label>
-						<input id="meal" name="meal" type="text" placeholder="Meal" required>
-					</fieldset>
-					https://www.dropbox.com/sh/g0celdfxbso3zq6/AAAo0_I91o6LeeIWyRYpArbNa?dl=0&preview=website_form.png
-				-->
-									
-				<button type="submit" name="rsvp">RSVP</button>
+				</div>									
+				<button type="submit" name="rsvp" class="rsvp">RSVP</button>
 			</form>
 		</div>
 	</section>
@@ -237,5 +255,6 @@
 		<div class="copyright">Made with love by Jennifer Patel &amp; Phillip Sobus &copy; <span class="currentYear">2017</span></div>
 	</footer>
 
+	<script src="./js/site.js"></script>
 </body>
 </html>
