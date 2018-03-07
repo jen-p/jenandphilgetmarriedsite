@@ -1,14 +1,16 @@
 function setDaysLeft(endtime){
-  var timeleft = Date.parse(endtime) - Date.parse(new Date());
-  var days = Math.floor( timeleft/(1000*60*60*24) );
+  var timeleft = (new Date(endtime)).getTime() - (new Date()).getTime();
+  var days = Math.ceil(timeleft / (1000*60*60*24));
 
   var daysDiv = document.getElementById("days");
+  var togo = document.getElementById("togo");
   daysDiv.innerHTML = days;
 
-  if(timeleft<=0){
-    var togo = document.getElementById("togo");
+  if(timeleft <= 0){
     daysDiv.innerHTML = "We've done it!!";
     togo.innerHTML = "You've missed the party!!!";
+  }else if(days === 1){
+    togo.innerHTML = "day to go";
   }
 }
 
