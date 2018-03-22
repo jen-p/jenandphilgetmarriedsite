@@ -380,6 +380,9 @@ section {
 						width: 90%;
 					}
 				}
+				&.code {
+					max-width: 80%;
+				}
 				&.notes {
 					max-width: 80%;
 				}
@@ -421,6 +424,29 @@ section {
 	}
 	textarea {
 		width: 90%;
+	}
+	fieldset.numberAttending:not(.hidden),
+	fieldset.meal:not(.hidden) {
+		select {
+			appearance: none;
+		}
+		.selectWrapper {
+			position: relative;
+
+			&:after{
+				content: "";
+				position: absolute;
+				display: block;
+				pointer-events: none;
+				top: 26px;
+			    right: 22px;
+			    height: 0.5rem;
+			    width: 0.5rem;
+			    border-left: 2px solid #895A9D;
+			    border-bottom: 2px solid #895A9D;
+				transform: rotate(-45deg);
+			}
+		}
 	}
 }
 

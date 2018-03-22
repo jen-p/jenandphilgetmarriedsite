@@ -30,23 +30,42 @@ function handleMenu() {
   };
 }
 
-function submitForm($form){
-  if(null === sessionStorage.getItem("formSubmitted")){
-    $.ajax({
-      type: "POST",
-      url: window.location.port === "1337" ? "mockSubmission" : $form.attr("action") + "?rsvp=true",
-      data: $form.serialize(),
-      dataType: "json",
-      timeout: 10000
-    }).fail(function(){
-      alert("We're sorry, please try again later");
-    }).done(function(json){
-      sessionStorage.setItem("formSubmitted", true);
-      alert("Thanks for the update!");
-    });
+function checkCode(rsvpCode){
+  return rsvpCode === "LLAP041919";
+}
+
+function checkForm($form) {
+  if(null === sessionStorage.getItem("formSubmitted1")){
+    var rsvpCode = $form.find("input[name='code']").val();
+    
+    if($form[0].checkValidity()){
+      if(checkCode(rsvpCode)){
+        submitForm($form, "?rsvp=true");
+      }else{
+        window.navigator.vibrate([100,75,100,75,100]);
+        alert("Incorrect RSVP Code");
+      }
+    }else{
+      window.navigator.vibrate([100,75,100,75,100]);
+    }
   }else{
     alert("Thanks, but you've already submitted your RSVP today. Try again tomorrow!");
   }
+}
+
+function submitForm($form, formAppend){  
+  $.ajax({
+    type: "POST",
+    url: window.location.port === "1337" ? "mockSubmission" : $form.attr("action") + formAppend,
+    data: $form.serialize(),
+    dataType: "json",
+    timeout: 10000
+  }).fail(function(){
+    alert("We're sorry, please try again later");
+  }).done(function(json){
+    sessionStorage.setItem("formSubmitted", true);
+    alert("Thanks for the update!");
+  });
 }
 
 function createNewAttendanceRows($form, totalRows){
@@ -91,13 +110,15 @@ function handleForm(){
     var willAttend = $(this).val() === "Yes" ? true : false;
 
     if(willAttend){
-      $rsvpInfo.removeClass("hidden");
+      $rsvpInfo.find(".row.numberAttending").removeClass("hidden");
+      $rsvpInfo.find(".input-group.meal").removeClass("hidden");
       $rsvpInfo.find(".attendanceDependant").each(function(){
         $(this).removeAttr("disabled");
       });
       $form.find("select[name='numberAttending']").prop("selectedIndex", 0);
     }else{
-      $rsvpInfo.addClass("hidden");
+      $rsvpInfo.find(".row.numberAttending").addClass("hidden");
+      $rsvpInfo.find(".input-group.meal").addClass("hidden");
       $rsvpInfo.remove(".row.dynamic");
 
       $rsvpInfo.find(".row.dynamic").each(function(){
@@ -125,11 +146,7 @@ function handleForm(){
   $form.find("button.rsvp").click(function() {
     $form.find("textarea#notes").val($form.find("textarea#notes").val().trim());
 
-    if($form[0].checkValidity()){
-      submitForm($form);
-    }else{
-      window.navigator.vibrate([100,50,100,50,100]);
-    }
+    checkForm($form);
   });
 }
 

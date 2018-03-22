@@ -142,36 +142,40 @@
 						<label for="attendance-negative" class="button">Can't make it.</label>
 					</fieldset>
 				</div>
-				<div class="rsvp-info hidden">
-					<div class="row">
-						<fieldset class="input-group numberAttending">
+				<div class="rsvp-info">
+					<div class="row numberAttending hidden">
+						<fieldset class="input-group numberAttending">	
 							<label for="numberAttending">Number Attending</label>
-							<select id="numberAttending" name="numberAttending" class="attendanceDependant" title="Please choose the amount of people coming" disabled required>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-							</select>
+							<div class="selectWrapper">
+								<select id="numberAttending" name="numberAttending" class="attendanceDependant" title="Please choose the amount of people coming" disabled required>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+								</select>
+							</div>
 						</fieldset>
 					</div>
 					<div class="row default">
 						<fieldset class="input-group">
 							<label for="name">Name</label>
-							<input id="name" name="name" type="text" title="Please fill out your full name" placeholder="Name" class="attendanceDependant" disabled required>
+							<input id="name" name="name" type="text" title="Please fill out your full name" placeholder="Name" required>
 						</fieldset>
-						<fieldset class="input-group">
+						<fieldset class="input-group meal hidden">
 							<label for="meal">Meal Preference</label>
-							<select id="meal" name="meal" class="attendanceDependant" title="Please choose a meal preference" disabled required>
-								<option value="meat">Meat</option>
-								<option value="vegetable">Vegetable</option>
-								<option value="kids">Kids</option>
-							</select>
+							<div class="selectWrapper">
+								<select id="meal" name="meal" class="attendanceDependant" title="Please choose a meal preference" disabled required>
+									<option value="meat">Meat</option>
+									<option value="vegetable">Vegetable</option>
+									<option value="kids">Kids</option>
+								</select>
+							</div>
 						</fieldset>
 					</div>
 				</div>
@@ -186,7 +190,13 @@
 						<label for="email">Email (in case we need to get in touch)</label>
 						<input id="email" name="email" type="email" placeholder="emailaddress@domain.com" title="Please enter a valid email address" required>
 					</fieldset>
-				</div>
+				</div>		
+				<div class="row">
+					<fieldset class="input-group code">
+						<label for="code">RSVP Code</label>
+						<input id="code" name="code" type="text" placeholder="RSVP Code" title="Please enter the RSVP Code" minlength="10" maxlength="10" required>
+					</fieldset>
+				</div>									
 				<button type="submit" name="rsvp" class="rsvp">RSVP</button>
 			</form>
 		</div>

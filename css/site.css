@@ -227,14 +227,12 @@ section {
       margin: 0;
       display: inline-block; }
     .headshots .container {
-      display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; } }
+      -ms-flex-align: center;
+          align-items: center; } }
 
 #our-story {
   background: #EDE5F0; }
@@ -268,7 +266,6 @@ section {
       margin: 0 115px; } }
   @media (min-width: 450px) {
     #our-story .cats {
-      display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: distribute;
@@ -378,7 +375,6 @@ section {
     #rsvp .rsvp-container h3 {
       text-align: center; }
   #rsvp .rsvp-form .row {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -388,13 +384,11 @@ section {
     margin: 0 auto; }
     @media (min-width: 506px) {
       #rsvp .rsvp-form .row {
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center; } }
+        -ms-flex-pack: center;
+            justify-content: center; } }
     #rsvp .rsvp-form .row.attendance {
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center; }
+      -ms-flex-pack: center;
+          justify-content: center; }
     @media (max-width: 500px) {
       #rsvp .rsvp-form .row.default, #rsvp .rsvp-form .row.dynamic {
         background: rgba(237, 229, 240, 0.8);
@@ -404,6 +398,8 @@ section {
       max-width: 80%; }
       #rsvp .rsvp-form .row fieldset.email input {
         width: 90%; }
+    #rsvp .rsvp-form .row fieldset.code {
+      max-width: 80%; }
     #rsvp .rsvp-form .row fieldset.notes {
       max-width: 80%; }
     #rsvp .rsvp-form .row fieldset.numberAttending {
@@ -416,9 +412,8 @@ section {
     margin-top: 1rem; }
   #rsvp .radio-button {
     display: inline-block;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+        flex: 1;
     width: 100%;
     max-width: 200px;
     min-width: 115px;
@@ -437,6 +432,28 @@ section {
       color: #fff; }
   #rsvp textarea {
     width: 90%; }
+  #rsvp fieldset.numberAttending:not(.hidden) select,
+  #rsvp fieldset.meal:not(.hidden) select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; }
+  #rsvp fieldset.numberAttending:not(.hidden) .selectWrapper,
+  #rsvp fieldset.meal:not(.hidden) .selectWrapper {
+    position: relative; }
+    #rsvp fieldset.numberAttending:not(.hidden) .selectWrapper:after,
+    #rsvp fieldset.meal:not(.hidden) .selectWrapper:after {
+      content: "";
+      position: absolute;
+      display: block;
+      pointer-events: none;
+      top: 26px;
+      right: 22px;
+      height: 0.5rem;
+      width: 0.5rem;
+      border-left: 2px solid #895A9D;
+      border-bottom: 2px solid #895A9D;
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
 
 footer {
   background: #222;

@@ -5,6 +5,7 @@ module.exports = {
 			src: [
 				'js/*.js', '!js/site.js',
 				'images/*', 
+				'fonts/*', 
 				'index.html',
 				'contact.php'
 			],
