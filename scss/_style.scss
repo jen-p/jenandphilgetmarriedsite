@@ -91,6 +91,7 @@ header {
 			li {
 				display: inline-block;
 				width: auto;
+				padding-right: 15px;
 				a {
 					color: $c-text-white;
 					text-decoration: none;
@@ -149,7 +150,7 @@ section {
 		}
 		.name {
 			align-text: center;
-			font-family: $font-fam-serif;
+			font-family: $font-fam-script;
 			font-size: 2rem;
 		}
 	}
@@ -363,7 +364,7 @@ section {
 			&.attendance{
 				justify-content: center;
 			}
-			&.default, 
+			&.default,
 			&.dynamic {
 				@media (max-width: 500px){
 					background: rgba(237, 229, 240, 0.8);
@@ -391,7 +392,7 @@ section {
 				}
 			}
 		}
-	}	
+	}
 	button {
 		display: block;
 		margin: 0 auto;
@@ -443,6 +444,9 @@ footer {
 	}
 	.copyright {
 		padding-top: 30px;
-		font-size: .875rem;
+		p {
+			font-size: .675rem;
+			line-height: 1rem;
+		}
 	}
 }

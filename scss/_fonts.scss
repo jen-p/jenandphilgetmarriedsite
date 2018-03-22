@@ -1,6 +1,13 @@
+@font-face {
+    font-family: 'LillyBelle';
+    src: url('../fonts/lillybelle-webfont.woff2') format('woff2'),
+         url('../fonts/lillybelle-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $font-fam-default: 'Montserrat', sans-serif;
-$font-fam-script: 'Rochester', cursive;
-$font-fam-serif: 'Playfair Display', serif;
+$font-fam-script: 'LillyBelle', cursive;
 
 h1, h2, h3 {
 	padding: 0;
@@ -70,7 +77,7 @@ button,
 fieldset {
 	border: none;
 }
-input, 
+input,
 select,
 textarea {
 	border: 2px $purple solid;

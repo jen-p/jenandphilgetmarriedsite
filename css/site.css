@@ -1,13 +1,19 @@
+@font-face {
+  font-family: 'LillyBelle';
+  src: url("../fonts/lillybelle-webfont.woff2") format("woff2"), url("../fonts/lillybelle-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 h1, h2, h3 {
   padding: 0;
   margin: 0; }
 
 h1 {
-  font-family: "Rochester", cursive;
+  font-family: "LillyBelle", cursive;
   font-size: 5.625rem; }
 
 h2 {
-  font-family: "Rochester", cursive;
+  font-family: "LillyBelle", cursive;
   font-size: 3.75rem; }
 
 h3 {
@@ -163,7 +169,8 @@ header {
     width: 100%; }
     #nav ul li {
       display: inline-block;
-      width: auto; }
+      width: auto;
+      padding-right: 15px; }
       #nav ul li a {
         color: #fff;
         text-decoration: none; }
@@ -211,7 +218,7 @@ section {
       padding-top: 20px; }
     .headshots .headshot .name {
       align-text: center;
-      font-family: "Playfair Display", serif;
+      font-family: "LillyBelle", cursive;
       font-size: 2rem; }
   @media (min-width: 610px) {
     .headshots .heart {
@@ -220,12 +227,14 @@ section {
       margin: 0;
       display: inline-block; }
     .headshots .container {
+      display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-      -ms-flex-align: center;
-          align-items: center; } }
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; } }
 
 #our-story {
   background: #EDE5F0; }
@@ -259,6 +268,7 @@ section {
       margin: 0 115px; } }
   @media (min-width: 450px) {
     #our-story .cats {
+      display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: distribute;
@@ -368,6 +378,7 @@ section {
     #rsvp .rsvp-container h3 {
       text-align: center; }
   #rsvp .rsvp-form .row {
+    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -377,11 +388,13 @@ section {
     margin: 0 auto; }
     @media (min-width: 506px) {
       #rsvp .rsvp-form .row {
-        -ms-flex-pack: center;
-            justify-content: center; } }
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
     #rsvp .rsvp-form .row.attendance {
-      -ms-flex-pack: center;
-          justify-content: center; }
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
     @media (max-width: 500px) {
       #rsvp .rsvp-form .row.default, #rsvp .rsvp-form .row.dynamic {
         background: rgba(237, 229, 240, 0.8);
@@ -403,8 +416,9 @@ section {
     margin-top: 1rem; }
   #rsvp .radio-button {
     display: inline-block;
-    -ms-flex: 1;
-        flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     width: 100%;
     max-width: 200px;
     min-width: 115px;
@@ -438,5 +452,7 @@ footer {
     background-size: contain;
     vertical-align: bottom; }
   footer .copyright {
-    padding-top: 30px;
-    font-size: .875rem; }
+    padding-top: 30px; }
+    footer .copyright p {
+      font-size: .675rem;
+      line-height: 1rem; }

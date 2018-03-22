@@ -1,8 +1,8 @@
 {
-  "name": "portfolio",
+  "name": "wedding-site",
   "version": "0.1.0",
-  "description": "portfolio backend",
-  "repository": "portfolio",
+  "description": "wedding-site backend",
+  "repository": "wedding-site",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2"
