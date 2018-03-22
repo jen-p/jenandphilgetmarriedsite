@@ -29,7 +29,7 @@
 	set_error_handler("exception_error_handler");
 
 	if(isset($_GET['rsvp'])){
-		$to = "phil.sobus@gmail.com";
+		$to = "jennifer.c.patel@gmail.com, phil.sobus@gmail.com";
 		$from = "us@jenandphilgetmarried.com";
 		$subject = "RSVP From - ";
 		$headers = 'From: '.$from;

@@ -35,7 +35,7 @@ function checkCode(rsvpCode){
 }
 
 function checkForm($form) {
-  if(null === sessionStorage.getItem("formSubmitted1")){
+  if(null === sessionStorage.getItem("formSubmitted")){
     var rsvpCode = $form.find("input[name='code']").val();
     
     if($form[0].checkValidity()){
