@@ -15,7 +15,7 @@
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
   <link rel="stylesheet" href="./css/site.css">
-  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="icon" type="image/png" href="./images/favicon.png">
 
   <script src="./js/jquery-3.3.1.min.js"></script>
 </head>
@@ -45,14 +45,18 @@
 	<section class="headshots">
 		<div class="container">
 			<div class="headshot">
-				<div class="img jen"></div>
-				<h3>The Bride</h3>
+        <div class="img">
+          <img src="/images/jen2.png" alt="Jen's Face" />
+        </div>
+        <h3>The Bride</h3>
 				<div class="name">Jennifer Patel</div>
 			</div>
       <div class="heart"></div>
 			<div class="headshot">
-				<div class="img phil"></div>
-				<h3>The Groom</h3>
+        <div class="img">
+          <img src="/images/phil2.png" alt="Phil's Face" />
+        </div>
+        <h3>The Groom</h3>
 				<div class="name">Phillip Sobus</div>
 			</div>
 		</div>
@@ -144,7 +148,7 @@
 				</div>
 				<div class="rsvp-info">
 					<div class="row numberAttending hidden">
-						<fieldset class="input-group numberAttending">	
+						<fieldset class="input-group numberAttending">
 							<label for="numberAttending">Number Attending</label>
 							<div class="selectWrapper">
 								<select id="numberAttending" name="numberAttending" class="attendanceDependant" title="Please choose the amount of people coming" disabled required>
@@ -190,13 +194,13 @@
 						<label for="email">Email (in case we need to get in touch)</label>
 						<input id="email" name="email" type="email" placeholder="emailaddress@domain.com" title="Please enter a valid email address" required>
 					</fieldset>
-				</div>		
+				</div>
 				<div class="row">
 					<fieldset class="input-group code">
 						<label for="code">RSVP Code</label>
 						<input id="code" name="code" type="text" placeholder="RSVP Code" title="Please enter the RSVP Code" minlength="10" maxlength="10" required>
 					</fieldset>
-				</div>									
+				</div>
 				<button type="submit" name="rsvp" class="rsvp">RSVP</button>
 			</form>
 		</div>

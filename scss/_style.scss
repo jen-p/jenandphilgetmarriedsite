@@ -141,8 +141,10 @@ section {
 			height: 230px;
 			width: 230px;
 			border-radius: 50%;
-			&.jen { background: url('../images/jen.png') no-repeat; }
-			&.phil { background: url('../images/phil.png') no-repeat; }
+		}
+		img {
+			height: auto;
+			width: 100%;
 		}
 		h3 {
 			align-text: center;
