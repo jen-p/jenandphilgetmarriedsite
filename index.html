@@ -65,7 +65,7 @@
 	<section id="our-story">
 		<div class="story">
 			<h3>Our Story</h3>
-			<p>We met at RIT through friends in 2009, but it wasn't until 2010 that we came to know each other and become friends. After almost a year of bonding over movies, video games, all things sci fi and fantasy, we started dating in 2011. Seven years later, we're still each others' best friends, true loves, badass partners in crime, and cat parents. We're finally going to take the plunge and get buried together forever.</p>
+			<p>We met at RIT through friends in 2009, but it wasn't until 2010 that we came to know each other and become best friends. After almost a year of bonding over movies, video games, and all things sci fi and fantasy, we started dating in 2011. Seven years later, we're still each others' best friends, true loves, badass partners in life, and cat parents. We're finally going to take the plunge.</p>
 		</div>
 		<div class="cats">
 			<div class="cat">
@@ -146,7 +146,7 @@
 						<label for="attendance-negative" class="button">Can't make it.</label>
 					</fieldset>
 				</div>
-				<div class="rsvp-info">
+				<div class="rsvp-info hidden">
 					<div class="row numberAttending hidden">
 						<fieldset class="input-group numberAttending">
 							<label for="numberAttending">Number Attending</label>
@@ -167,7 +167,7 @@
 						</fieldset>
 					</div>
 					<div class="row default">
-						<fieldset class="input-group">
+						<fieldset class="input-group name">
 							<label for="name">Name</label>
 							<input id="name" name="name" type="text" title="Please fill out your full name" placeholder="Name" required>
 						</fieldset>
@@ -183,25 +183,25 @@
 						</fieldset>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row hidden">
 					<fieldset class="input-group notes">
-						<label for="notes">Other notes (dietary restrictions, etc)</label>
+						<label for="notes" class="notesLabel" data-notAttending="Sorry you can't make it (other notes)" data-attending="Other notes (dietary restrictions, etc)">Other notes (dietary restrictions, etc)</label>
 						<textarea rows="10" cols="50" id="notes" name="notes" spellcheck="true"></textarea>
 					</fieldset>
 				</div>
-				<div class="row">
+				<div class="row hidden">
 					<fieldset class="input-group email">
 						<label for="email">Email (in case we need to get in touch)</label>
 						<input id="email" name="email" type="email" placeholder="emailaddress@domain.com" title="Please enter a valid email address" required>
 					</fieldset>
 				</div>
-				<div class="row">
+				<div class="row hidden">
 					<fieldset class="input-group code">
 						<label for="code">RSVP Code</label>
 						<input id="code" name="code" type="text" placeholder="RSVP Code" title="Please enter the RSVP Code" minlength="10" maxlength="10" required>
 					</fieldset>
 				</div>
-				<button type="submit" name="rsvp" class="rsvp">RSVP</button>
+				<button type="submit" name="rsvp" class="rsvp hidden">RSVP</button>
 			</form>
 		</div>
 	</section>

@@ -4,17 +4,26 @@
   font-weight: normal;
   font-style: normal; }
 
+* {
+  box-sizing: border-box; }
+
 h1, h2, h3 {
   padding: 0;
   margin: 0; }
 
 h1 {
   font-family: "LillyBelle", cursive;
-  font-size: 5.625rem; }
+  font-size: 3.725rem; }
+  @media (min-width: 450px) {
+    h1 {
+      font-size: 5.625rem; } }
 
 h2 {
   font-family: "LillyBelle", cursive;
-  font-size: 3.75rem; }
+  font-size: 2.75rem; }
+  @media (min-width: 450px) {
+    h2 {
+      font-size: 3.75rem; } }
 
 h3 {
   font-family: "Montserrat", sans-serif;
@@ -63,7 +72,9 @@ button,
     color: #fff; }
 
 fieldset {
-  border: none; }
+  border: none;
+  width: 100%;
+  max-width: 500px; }
 
 input,
 select,
@@ -74,7 +85,8 @@ textarea {
   background: rgba(137, 90, 157, 0.3);
   font-family: "Montserrat", sans-serif;
   color: #6B6B6B;
-  font-size: 1rem; }
+  font-size: 1rem;
+  width: 100%; }
 
 .hidden {
   clip: rect(0 0 0 0);
@@ -226,14 +238,12 @@ section {
       margin: 0;
       display: inline-block; }
     .headshots .container {
-      display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; } }
+      -ms-flex-align: center;
+          align-items: center; } }
 
 #our-story {
   background: #EDE5F0; }
@@ -267,7 +277,6 @@ section {
       margin: 0 115px; } }
   @media (min-width: 450px) {
     #our-story .cats {
-      display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: distribute;
@@ -300,7 +309,7 @@ section {
     margin: 0 auto; }
   #schedule .agenda {
     margin: 0 auto;
-    margin-left: 52px; }
+    margin-left: 10%; }
     #schedule .agenda .timeblock {
       margin: 50px 0; }
       #schedule .agenda .timeblock .when, #schedule .agenda .timeblock .what {
@@ -377,7 +386,6 @@ section {
     #rsvp .rsvp-container h3 {
       text-align: center; }
   #rsvp .rsvp-form .row {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -387,39 +395,36 @@ section {
     margin: 0 auto; }
     @media (min-width: 506px) {
       #rsvp .rsvp-form .row {
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center; } }
+        -ms-flex-pack: center;
+            justify-content: center; } }
     #rsvp .rsvp-form .row.attendance {
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center; }
-    @media (max-width: 500px) {
+      -ms-flex-pack: center;
+          justify-content: center; }
+    @media (max-width: 600px) {
       #rsvp .rsvp-form .row.default, #rsvp .rsvp-form .row.dynamic {
         background: rgba(237, 229, 240, 0.8);
         border-radius: 6px;
         margin-bottom: 1rem; } }
-    #rsvp .rsvp-form .row fieldset.email {
-      max-width: 80%; }
-      #rsvp .rsvp-form .row fieldset.email input {
-        width: 90%; }
-    #rsvp .rsvp-form .row fieldset.code {
-      max-width: 80%; }
-    #rsvp .rsvp-form .row fieldset.notes {
-      max-width: 80%; }
     #rsvp .rsvp-form .row fieldset.numberAttending {
-      min-width: 150px; }
-      #rsvp .rsvp-form .row fieldset.numberAttending select {
-        width: 150px; }
+      min-width: 150px;
+      max-width: 200px; }
+  @media (min-width: 600px) {
+    #rsvp .rsvp-form[data-attend='true'] .input-group.name {
+      max-width: 300px; } }
+  @media (min-width: 600px) {
+    #rsvp .rsvp-form[data-attend='true'] .input-group.meal {
+      max-width: 200px; } }
+  #rsvp .attendanceWrapper {
+    max-width: 440px;
+    margin: 0 auto; }
   #rsvp button {
     display: block;
     margin: 0 auto;
     margin-top: 1rem; }
   #rsvp .radio-button {
     display: inline-block;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+        flex: 1;
     width: 100%;
     max-width: 200px;
     min-width: 115px;
@@ -436,13 +441,11 @@ section {
     #rsvp input[type='radio']:checked + label {
       background: #895A9D;
       color: #fff; }
-  #rsvp textarea {
-    width: 90%; }
   #rsvp fieldset.numberAttending:not(.hidden) select,
   #rsvp fieldset.meal:not(.hidden) select {
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none; }
+    -moz-appearance: none;
+         appearance: none;
+    -webkit-appearance: none; }
   #rsvp fieldset.numberAttending:not(.hidden) .selectWrapper,
   #rsvp fieldset.meal:not(.hidden) .selectWrapper {
     position: relative; }
@@ -458,9 +461,8 @@ section {
       width: 0.5rem;
       border-left: 2px solid #895A9D;
       border-bottom: 2px solid #895A9D;
-      -webkit-transform: rotate(-45deg);
-          -ms-transform: rotate(-45deg);
-              transform: rotate(-45deg); }
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
 
 footer {
   background: #222;

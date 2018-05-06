@@ -249,7 +249,7 @@ section {
 	}
 	.agenda {
 		margin: 0 auto;
-		margin-left: 52px;
+		margin-left: 10%;
 		.timeblock {
 			margin: 50px 0;
 			.when, .what {
@@ -368,35 +368,40 @@ section {
 			}
 			&.default,
 			&.dynamic {
-				@media (max-width: 500px){
+				@media (max-width: 600px){
 					background: rgba(237, 229, 240, 0.8);
 					border-radius: $border-radius;
 					margin-bottom: 1rem;
 				}
 			}
 			fieldset {
-				&.email{
-					max-width: 80%;
-
-					input {
-						width: 90%;
-					}
-				}
-				&.code {
-					max-width: 80%;
-				}
-				&.notes {
-					max-width: 80%;
-				}
 				&.numberAttending {
 					min-width: 150px;
+					max-width: 200px;
+				}
+			}
+		}
 
-					select {
-						width: 150px;
+		&[data-attend='true']{
+			.input-group{
+				&.name {
+
+					@media (min-width: 600px){
+						max-width: 300px;	
+					}
+				}
+				&.meal {
+
+					@media (min-width: 600px){
+						max-width: 200px;
 					}
 				}
 			}
 		}
+	}
+	.attendanceWrapper {
+		max-width: 440px;
+		margin: 0 auto;
 	}
 	button {
 		display: block;
@@ -424,13 +429,11 @@ section {
 			color: $c-text-white;
 		}
 	}
-	textarea {
-		width: 90%;
-	}
 	fieldset.numberAttending:not(.hidden),
 	fieldset.meal:not(.hidden) {
 		select {
 			appearance: none;
+			-webkit-appearance: none;
 		}
 		.selectWrapper {
 			position: relative;

@@ -34,16 +34,37 @@ function checkCode(rsvpCode){
   return rsvpCode === "LLAP041919";
 }
 
+function checkNames($form){
+  var isValid = true;
+  var currentName = "";
+  $form.find(".input-group.name input").each(function(){
+    var name = $(this).val();
+    if(currentName === name){
+      isValid = false;
+    }
+    currentName = name;
+  });
+  return isValid;
+}
+
 function checkForm($form) {
   if(null === sessionStorage.getItem("formSubmitted")){
     var rsvpCode = $form.find("input[name='code']").val();
-    
     if($form[0].checkValidity()){
-      if(checkCode(rsvpCode)){
-        submitForm($form, "?rsvp=true");
-      }else{
+      var isValidNames = checkNames($form);
+      var isValidCode = checkCode(rsvpCode);
+      var isValidForm = isValidNames && isValidCode;
+
+      if(!isValidCode){
         window.navigator.vibrate([100,75,100,75,100]);
         alert("Incorrect RSVP Code");
+      }
+      if(!isValidNames){
+        window.navigator.vibrate([100,75,100,75,100]);
+        alert("Dulicate Attendee Names");
+      }
+      if(isValidForm){
+        submitForm($form, "?rsvp=true");
       }
     }else{
       window.navigator.vibrate([100,75,100,75,100]);
@@ -63,8 +84,20 @@ function submitForm($form, formAppend){
   }).fail(function(){
     alert("We're sorry, please try again later");
   }).done(function(json){
-    sessionStorage.setItem("formSubmitted", true);
-    alert("Thanks for the update!");
+    $.ajax({
+      type: "POST",
+      url: "https://script.google.com/macros/s/AKfycbz4xmgPpda8btvU18YjcFOfFHfaxQq5874fpgTe5rAt5j_s0ss/exec",
+      data: new FormData($form[0]),
+      dataType: "json",
+      processData: false,
+      contentType: false,
+      timeout: 10000
+    }).fail(function(){
+      alert("We're sorry, please try again later");
+    }).done(function(json){
+      sessionStorage.setItem("formSubmitted", true);
+      alert("Thanks for the update!");
+    });
   });
 }
 
@@ -105,11 +138,18 @@ function createNewAttendanceRows($form, totalRows){
 function handleForm(){
   var $form = $("form.rsvp-form");
   var $rsvpInfo = $form.find(".rsvp-info");
+  var $formButton = $form.find("button.rsvp");
 
   $form.find("input[name='attendance']").click(function(){
     var willAttend = $(this).val() === "Yes" ? true : false;
 
+    $form.find("> .row.hidden").removeClass("hidden");
+    $rsvpInfo.removeClass("hidden");
+    $formButton.removeClass("hidden");
+
     if(willAttend){
+      $form.find(".notesLabel").html($form.find(".notesLabel").attr("data-attending"));
+      $form.attr("data-attend", "true");
       $rsvpInfo.find(".row.numberAttending").removeClass("hidden");
       $rsvpInfo.find(".input-group.meal").removeClass("hidden");
       $rsvpInfo.find(".attendanceDependant").each(function(){
@@ -117,6 +157,8 @@ function handleForm(){
       });
       $form.find("select[name='numberAttending']").prop("selectedIndex", 0);
     }else{
+      $form.find(".notesLabel").html($form.find(".notesLabel").attr("data-notAttending"));
+      $form.attr("data-attend", "false");
       $rsvpInfo.find(".row.numberAttending").addClass("hidden");
       $rsvpInfo.find(".input-group.meal").addClass("hidden");
       $rsvpInfo.remove(".row.dynamic");
@@ -143,7 +185,7 @@ function handleForm(){
     }
   });
 
-  $form.find("button.rsvp").click(function() {
+  $formButton.click(function() {
     $form.find("textarea#notes").val($form.find("textarea#notes").val().trim());
 
     checkForm($form);

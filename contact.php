@@ -46,9 +46,9 @@
 			$notes = sanitize($_POST['notes']);
 			$output .= "Notes: ".$notes."\n\n";
 		}		
-		if(isset($_POST['number'])){
-			$number = sanitize($_POST['number']);
-			$output .= "Number Attending: ".$number."\n";
+		if(isset($_POST['numberAttending'])){
+			$numberAttending = sanitize($_POST['numberAttending']);
+			$output .= "Number Attending: ".$numberAttending."\n";
 		}
 		if(isset($_POST['name']) && isset($_POST['meal'])){
 			$name = sanitize($_POST['name']);
